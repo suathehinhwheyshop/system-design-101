@@ -16,6 +16,8 @@ import {VersusEdit, calcVersus, VersusProps} from './compositions/VersusEdit';
 import kb12Props from '../props/kb12.json';
 import {StoryEdit, calcStory, StoryProps} from './compositions/StoryEdit';
 import kb13Props from '../props/kb13.json';
+import {HfType, calcHfType, HfTypeProps} from './compositions/HfType';
+import hf01Props from '../props/hf01.json';
 import {TalkKinetic, calcKinetic, KineticProps} from './compositions/TalkKinetic';
 
 const FontTest: React.FC = () => (
@@ -44,5 +46,7 @@ export const Root: React.FC = () => (
       defaultProps={kb12Props as unknown as VersusProps} calculateMetadata={calcVersus} />
     <Composition id="StoryEdit" component={StoryEdit} durationInFrames={1463} fps={30} width={1080} height={1920}
       defaultProps={kb13Props as unknown as StoryProps} calculateMetadata={calcStory} />
+    <Composition id="HfType" component={HfType} durationInFrames={931} fps={30} width={1080} height={1920}
+      defaultProps={hf01Props as unknown as HfTypeProps} calculateMetadata={calcHfType} />
   </>
 );
