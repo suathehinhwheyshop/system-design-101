@@ -1,108 +1,152 @@
-"""HF-01 (House de Forme) — chữ đánh máy theo lời thoại + tiếng gõ phím.
-Tạo props/hf01.json (mốc hiện từng ký tự) và public/sfx/hf01-typing.wav (tiếng gõ khớp đúng mốc đó).
-  python3 scripts/hf01_props.py"""
-import json, random, unicodedata, wave
+"""HF-01 (House de Forme) — sắp lại cảnh theo lời thoại + chữ đánh máy + tiếng gõ phím.
+  python3 scripts/hf01_props.py          → public/hf01-edit.mp4 (cảnh đã sắp, không tiếng), public/hf01-audio.wav,
+                                           public/hf01-last.png, public/sfx/hf01-typing.wav, props/hf01.json
+Nguồn: public/hf01.mp4 (bản gốc, 30 fps). Cảnh lấy theo số khung [đầu, cuối) của bản gốc."""
+import json, os, random, subprocess, unicodedata, wave
 import numpy as np
 
-SR = 48000
-VIDEO_SEC = 29.533
-HOLD = 1.5                     # giữ khung cuối để kịp đọc câu kết
-DUR = round(VIDEO_SEC + HOLD, 2)
-random.seed(7)
-rng = np.random.default_rng(7)
+FPS, SR = 30, 48000
+SRC = 'public/hf01.mp4'
+HOLD = 1.5  # giữ khung cuối để kịp đọc câu kết
 
-# (vào, ra, vị trí, các hàng) — *...* = chữ nhấn (Inter nghiêng). Vị trí: 'top' dưới logo / 'low' vùng chân khi mặt ở trên.
-CARDS = [
-    (0.10, 1.66, 'low', ['Mình từng như *thế này.*']),
-    (1.76, 3.26, 'top', ['Rồi lại *thế này.*']),
-    (3.36, 5.96, 'top', ['Và bây giờ', 'là *thế này.*']),
-    (6.08, 8.98, 'top', ['Có lúc soi gương', 'thấy *rất thích.*']),
-    (9.12, 13.14, 'top', ['Có lúc lại', '*chẳng hài lòng.*']),
-    (13.28, 15.38, 'top', ['Mình cũng từng', '*sốt ruột,*']),
-    (15.52, 17.84, 'top', ['muốn thay đổi', '*nhanh hơn.*']),
-    (17.98, 20.64, 'top', ['Nhưng cơ thể', 'cần *thời gian.*']),
-    (20.80, 23.45, 'top', ['Nên mình cứ tiếp tục', '*từng buổi một.*']),
-    (23.60, 26.66, 'top', ['Cả những ngày', 'chưa thấy khác,', 'mình *vẫn cố gắng.*']),
-    (26.80, 27.86, 'low', ['Vì mình biết', 'cứ *kiên trì,*']),
-    (27.98, DUR, 'top', ['thì những thay đổi', '*tích cực*', 'sẽ ghé thăm']),
+# (tên cảnh, khung đầu, khung cuối, tốc độ, vị trí chữ, các hàng chữ, vùng mặt y trên–dưới)
+#   tốc độ < 1 = quay chậm có nội suy khung (minterpolate) cho cảnh quá ngắn
+#   *...* = chữ nhấn (Inter nghiêng). 'top' = dưới logo, 'low' = vùng chân (cảnh mặt ở trên khung)
+EDIT = [
+    ('J bầu soi gương',      802, 837, 0.75, 'low', ['Mình từng', 'như *thế này.*'], (0.09, 0.26)),
+    ('E bế con soi gương',   271, 320, 1.0,  'top', ['Rồi lại *thế này.*'], (0.36, 0.53)),
+    ('K bây giờ soi gương',  847, 886, 0.7,  'top', ['Và bây giờ', 'là *thế này.*'], (0.34, 0.48)),
+    ('C squat smith',         99, 170, 1.0,  'top', ['Có lúc soi gương', 'thấy *rất thích.*'], (0.26, 0.41)),
+    ('G đá chân quần xanh',  463, 537, 1.0,  'top', ['Có lúc lại', '*chẳng hài lòng.*'], (0.31, 0.46)),
+    ('B squat quần jean',     51,  99, 0.8,  'top', ['Mình cũng từng', '*sốt ruột,*'], (0.35, 0.50)),
+    ('H tập cáp đeo địu',    537, 621, 1.0,  'top', ['muốn thay đổi', '*nhanh hơn.*'], (0.35, 0.48)),
+    ('F tập lúc mang bầu',   396, 463, 1.0,  'top', ['Nhưng cơ thể', 'cần *thời gian.*'], (0.37, 0.48)),
+    ('I1 đẩy tạ',            621, 711, 1.0,  'top', ['Nên mình cứ', 'tiếp tục', '*từng buổi một.*'], (0.39, 0.50)),
+    ('D chống đẩy',          190, 271, 1.0,  'top', ['Cả những ngày', 'chưa thấy khác,', 'mình *vẫn cố gắng.*'], (0.53, 0.64)),
+    ('I2 đẩy tạ',            711, 802, 1.0,  'top', ['Vì mình biết', 'cứ *kiên trì,*'], (0.39, 0.50)),
+    ('A squat quần hồng',      0,  51, 1.0,  'low', ['thì những thay đổi', '*tích cực* sẽ ghé thăm'], (0.04, 0.36)),
 ]
-# Vùng mặt đo từ khung gốc (giây vào, ra, y trên, y dưới — theo chiều cao khung)
-FACES = [[0, 1.7, 0.04, 0.36], [1.7, 3.3, 0.35, 0.50], [3.3, 6.0, 0.26, 0.41], [6.0, 9.03, 0.53, 0.64],
-         [9.03, 13.2, 0.28, 0.54], [13.2, 15.43, 0.37, 0.48], [15.43, 17.9, 0.31, 0.46], [17.9, 20.7, 0.35, 0.48],
-         [20.7, 26.73, 0.39, 0.50], [26.73, 27.9, 0.09, 0.26], [27.9, DUR, 0.34, 0.48]]
-CPS = 15.0       # tốc độ gõ gốc (ký tự/giây), tự tăng nếu thẻ ngắn
-MAX_TYPE = 0.58  # gõ xong trước 58% thời lượng thẻ để còn thời gian đọc
+CPS = 14.0       # tốc độ gõ gốc (ký tự/giây), tự tăng nếu thẻ ngắn
+MAX_TYPE = 0.55  # gõ xong trước 55% thời lượng thẻ để còn thời gian đọc
+random.seed(11)
+rng = np.random.default_rng(11)
 
 
-def plain(r):
-    return unicodedata.normalize('NFC', r.replace('*', ''))
+def out_frames(a, b, sp):
+    return round((b - a) / sp)
 
 
-scenes, keys = [], []
-for a, b, pos, rows in CARDS:
-    rows = [unicodedata.normalize('NFC', r) for r in rows]
-    gaps = []  # khoảng chờ trước mỗi ký tự (đơn vị "nhịp")
-    for ri, r in enumerate(plain_rows := [plain(r) for r in rows]):
+# ---- 1. ghép cảnh theo thứ tự mới ----
+parts, labels = [], []
+for k, (name, a, b, sp, *_r) in enumerate(EDIT):
+    f = f"[0:v]trim=start_frame={a}:end_frame={b},setpts=PTS-STARTPTS"
+    if sp != 1:
+        f += f",setpts=PTS/{sp},minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:vsbmc=1"
+    f += f",fps={FPS},trim=end_frame={out_frames(a, b, sp)},setpts=PTS-STARTPTS[v{k}]"
+    parts.append(f)
+    labels.append(f'[v{k}]')
+fc = ';'.join(parts) + ';' + ''.join(labels) + f'concat=n={len(EDIT)}:v=1:a=0[v]'
+subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', SRC, '-filter_complex', fc, '-map', '[v]',
+                '-c:v', 'libx264', '-crf', '12', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-r', str(FPS), 'public/hf01-edit.mp4'], check=True)
+subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', SRC, '-vn', '-ac', '2', '-ar', str(SR), 'public/hf01-audio.wav'], check=True)
+n_edit = sum(out_frames(a, b, sp) for _, a, b, sp, *_r in EDIT)
+subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', 'public/hf01-edit.mp4', '-vf', f'select=eq(n\\,{n_edit - 1})',
+                '-frames:v', '1', '-update', '1', 'public/hf01-last.png'], check=True)
+VIDEO_SEC = n_edit / FPS
+DUR = round(VIDEO_SEC + HOLD, 3)
+
+
+# ---- 2. thẻ chữ + mốc từng ký tự ----
+def nfc(s):
+    return unicodedata.normalize('NFC', s)
+
+
+scenes, keys, faces, cuts = [], [], [], []
+fr = 0
+for k, (name, a, b, sp, pos, rows, face) in enumerate(EDIT):
+    n = out_frames(a, b, sp)
+    s0, s1 = fr / FPS, (fr + n) / FPS
+    fr += n
+    cuts.append((round(s0, 3), name, a / FPS, b / FPS, sp))
+    if k == len(EDIT) - 1:
+        s1 = DUR
+    faces.append([round(s0, 3), round(s1, 3), face[0], face[1]])
+    a_t, b_t = s0 + 0.08, s1 - (0 if k == len(EDIT) - 1 else 0.06)
+    plain_rows = [nfc(r.replace('*', '')) for r in rows]
+    gaps = []
+    for ri, r in enumerate(plain_rows):
         for ci, ch in enumerate(r):
-            g = random.uniform(0.7, 1.3)
+            g = random.uniform(0.75, 1.25)
             if ci == 0 and ri > 0:
-                g += 2.2                     # xuống dòng
+                g += 2.0      # xuống dòng
             if ci > 0 and r[ci - 1] in ',.':
-                g += 2.5                     # nghỉ sau dấu câu
+                g += 2.5      # nghỉ sau dấu câu
             gaps.append(g)
     gaps[0] = 0
     total = sum(gaps) / CPS
-    k = min(1.0, (b - a - 0.12) * MAX_TYPE / total) if total else 1
-    t, times = a + 0.12, []
+    sc = min(1.0, (min(b_t, s0 + 4) - a_t) * MAX_TYPE / total)
+    t, times = a_t + 0.1, []
     for g in gaps:
-        t += g / CPS * k
+        t += g / CPS * sc
         times.append(round(t, 3))
     i = 0
     for r in plain_rows:
         for ch in r:
             keys.append((times[i], ch))
             i += 1
-    scenes.append({'kind': 'lockup', 'fromSec': a, 'toSec': b, 'pos': pos,
-                   'rows': [{'small': r} for r in rows], 'times': times})
+    scenes.append({'kind': 'lockup', 'fromSec': round(a_t, 3), 'toSec': round(b_t, 3), 'pos': pos, 'shot': name,
+                   'rows': [{'small': nfc(r)} for r in rows], 'times': times})
 
 
-# ---- tiếng gõ phím (tự tổng hợp, không bản quyền) ----
-def click(space=False):
-    n = int(SR * (0.07 if space else 0.045))
+# ---- 3. tiếng gõ phím: bàn phím cơ "thock" trầm, êm (tự tổng hợp, không bản quyền) ----
+def bandnoise(n, lo, hi):
+    x = np.fft.rfft(rng.standard_normal(n))
+    fq = np.fft.rfftfreq(n, 1 / SR)
+    x[(fq < lo) | (fq > hi)] = 0
+    return np.fft.irfft(x, n)
+
+
+def key(space=False):
+    n = int(SR * 0.09)
     t = np.arange(n) / SR
-    noise = rng.standard_normal(n)
-    # tiếng "tách" cao: nhiễu lọc thông cao, tắt rất nhanh
-    hi = np.diff(noise, prepend=0) * np.exp(-t / 0.0022)
-    # thân phím: nhiễu dải giữa tắt chậm hơn
-    f = rng.uniform(1600, 2600) * (0.6 if space else 1)
-    body = np.sin(2 * np.pi * f * t + rng.uniform(0, 6)) * np.exp(-t / 0.006) * 0.35
-    mid = np.convolve(noise, np.ones(6) / 6, 'same') * np.exp(-t / (0.012 if space else 0.007)) * 0.6
-    thump = np.sin(2 * np.pi * rng.uniform(140, 200) * t) * np.exp(-t / 0.01) * (0.5 if space else 0.3)
-    s = hi * 0.55 + body + mid + thump
-    # tiếng nhả phím nhỏ sau ~25 ms
-    off = int(SR * rng.uniform(0.022, 0.03))
-    rel = np.zeros(n)
+    # chạm đáy phím: nhiễu dải trầm-trung, tắt nhanh → tiếng "thock" tròn
+    lo, hi = (250, 1400) if space else (500, 2600)
+    hit = bandnoise(n, lo, hi) * np.exp(-t / (0.011 if space else 0.0065))
+    # cộng hưởng vỏ phím
+    f1 = rng.uniform(180, 260) * (0.8 if space else 1)
+    f2 = rng.uniform(900, 1300)
+    res = (np.sin(2 * np.pi * f1 * t) * np.exp(-t / 0.014) * 0.55 + np.sin(2 * np.pi * f2 * t + 1) * np.exp(-t / 0.004) * 0.25)
+    # tiếng tách đầu rất ngắn, nhỏ (không chói)
+    tick = bandnoise(n, 2500, 6000) * np.exp(-t / 0.0009) * 0.35
+    s = hit / (np.abs(hit).max() + 1e-9) + res + tick
+    # nhả phím: tiếng nhỏ sau ~45–60 ms
+    off = int(SR * rng.uniform(0.045, 0.06))
     m = n - off
-    rel[off:] = np.diff(rng.standard_normal(m), prepend=0) * np.exp(-np.arange(m) / SR / 0.0015) * 0.25
-    s = s + rel
-    return s / np.abs(s).max() * rng.uniform(0.75, 1.0) * (0.8 if space else 1)
+    s[off:] += bandnoise(m, 700, 3000) * np.exp(-np.arange(m) / SR / 0.004) * 0.22
+    s = s * np.minimum(1, t / 0.0004)
+    return s / np.abs(s).max() * rng.uniform(0.72, 1.0) * (0.9 if space else 1)
 
 
 out = np.zeros(int(SR * (DUR + 0.5)))
 for t, ch in keys:
-    s = click(ch == ' ')
+    s = key(ch == ' ')
     i = int(t * SR)
     out[i:i + len(s)] += s[:len(out) - i]
-out = out / np.abs(out).max() * 0.5   # đỉnh -6 dBFS; âm lượng thật chỉnh trong props (typingVolume)
+ir = np.exp(-np.arange(int(SR * 0.05)) / SR / 0.012) * rng.standard_normal(int(SR * 0.05)) * 0.06
+ir[0] = 1
+out = np.convolve(out, ir)[:len(out)]  # chút phòng nhỏ cho tự nhiên
+out = out / np.abs(out).max() * 0.5
 pcm = (np.clip(out, -1, 1) * 32767).astype('<i2')
+os.makedirs('public/sfx', exist_ok=True)
 with wave.open('public/sfx/hf01-typing.wav', 'wb') as w:
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes())
 
-props = {'src': 'hf01.mp4', 'videoSec': VIDEO_SEC, 'durationSec': DUR, 'typing': 'sfx/hf01-typing.wav', 'typingVolume': 0.6,
-         'color': '#F4EFE6', 'fontSize': 58, 'topY': 0.125, 'lowY': 0.655, 'lastFrame': 'hf01-last.png',
+props = {'src': 'hf01-edit.mp4', 'audio': 'hf01-audio.wav', 'videoSec': round(VIDEO_SEC, 3), 'durationSec': DUR,
+         'lastFrame': 'hf01-last.png', 'typing': 'sfx/hf01-typing.wav', 'typingVolume': 0.6,
+         'color': '#F4EFE6', 'fontSize': 70, 'topY': 0.12, 'lowY': 0.6,
          'safe': {'left': 0.16, 'right': 0.16}, 'safeCheck': {'left': 0.06, 'right': 0.16},
-         'faceZones': FACES, 'scenes': scenes}
+         'faceZones': faces, 'scenes': scenes}
 json.dump(props, open('props/hf01.json', 'w'), ensure_ascii=False, indent=1)
-print(f'{len(scenes)} thẻ, {len(keys)} ký tự, {DUR}s')
-for s in scenes:
-    print(f"{s['fromSec']:6.2f}–{s['toSec']:5.2f}  gõ xong {s['times'][-1]:6.2f}  {' / '.join(plain(r['small']) for r in s['rows'])}")
+print(f'{len(scenes)} thẻ, {len(keys)} ký tự, video {VIDEO_SEC:.2f}s + giữ {HOLD}s = {DUR}s')
+for (c, name, a, b, sp), s in zip(cuts, scenes):
+    print(f"{c:6.2f}s  {name:20s} gốc {a:5.2f}–{b:5.2f}s ×{sp}  gõ xong {s['times'][-1]:6.2f}  {' / '.join(r['small'] for r in s['rows'])}")

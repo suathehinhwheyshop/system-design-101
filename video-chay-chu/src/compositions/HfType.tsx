@@ -7,13 +7,13 @@ import {INTER} from '../fonts';
 type Row = {small: string};
 type Card = {kind: 'lockup'; fromSec: number; toSec: number; pos: 'top' | 'low'; rows: Row[]; times: number[]};
 export type HfTypeProps = {src: string; videoSec: number; durationSec: number; typing?: string; typingVolume?: number;
-  color: string; fontSize: number; topY: number; lowY: number; scenes: Card[]; lastFrame?: string; debugRows?: boolean};
+  color: string; fontSize: number; topY: number; lowY: number; scenes: Card[]; lastFrame?: string; audio?: string; debugRows?: boolean};
 export const calcHfType: CalculateMetadataFunction<HfTypeProps> = async ({props}) => ({durationInFrames: Math.round(props.durationSec * 30), fps: 30});
 
 const PAL = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
-const O = 'rgba(0,0,0,.82)';
-const SHADOW = [`-1.5px -1.5px 0 ${O}`, `1.5px -1.5px 0 ${O}`, `-1.5px 1.5px 0 ${O}`, `1.5px 1.5px 0 ${O}`,
-  '0 0 3px rgba(0,0,0,.9)', '0 0 12px rgba(0,0,0,.62)', '0 0 26px rgba(0,0,0,.42)'].join(', ');
+const O = 'rgba(0,0,0,.85)';
+const SHADOW = [`-2px -2px 0 ${O}`, `2px -2px 0 ${O}`, `-2px 2px 0 ${O}`, `2px 2px 0 ${O}`, `0 2px 0 ${O}`, `0 -2px 0 ${O}`,
+  '0 0 4px rgba(0,0,0,.95)', '0 0 14px rgba(0,0,0,.7)', '0 0 32px rgba(0,0,0,.5)'].join(', ');
 
 const parse = (r: string) => r.split(/(\*[^*]+\*)/).filter(Boolean).map((p) => ({t: p.replace(/\*/g, '').normalize('NFC'), em: p.startsWith('*')}));
 
@@ -30,12 +30,12 @@ const CardView: React.FC<{c: Card; p: HfTypeProps; last: boolean}> = ({c, p, las
   let i = 0;
   return (
     <div style={{position: 'absolute', left: 0, right: 0, top: (c.pos === 'top' ? p.topY : p.lowY) * height, opacity: out,
-      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6}}>
+      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10}}>
       {c.rows.map((r, ri) => (
-        <div key={ri} style={{fontFamily: INTER, fontSize: p.fontSize, lineHeight: 1.3, letterSpacing: '-0.005em', whiteSpace: 'pre',
+        <div key={ri} style={{fontFamily: INTER, fontSize: p.fontSize, lineHeight: 1.22, letterSpacing: '0.002em', whiteSpace: 'pre',
           color: p.debugRows ? PAL[ri % PAL.length] : p.color, textShadow: p.debugRows ? 'none' : SHADOW}}>
           {parse(r.small).map((seg, si) => (
-            <span key={si} style={{fontStyle: seg.em ? 'italic' : 'normal', fontWeight: seg.em ? 600 : 400}}>
+            <span key={si} style={{fontStyle: seg.em ? 'italic' : 'normal', fontWeight: seg.em ? 600 : 420}}>
               {Array.from(seg.t).map((ch, k) => {
                 const idx = i++;
                 const vis = idx < n;
@@ -43,7 +43,7 @@ const CardView: React.FC<{c: Card; p: HfTypeProps; last: boolean}> = ({c, p, las
                 return (
                   <span key={k} style={{visibility: vis ? 'visible' : 'hidden', position: 'relative'}}>
                     {ch}
-                    {cur ? <span style={{position: 'absolute', right: -9, top: '0.16em', width: 4, height: '1.02em', background: p.color,
+                    {cur ? <span style={{position: 'absolute', right: -10, top: '0.14em', width: 5, height: '1.02em', background: p.color,
                       boxShadow: '0 0 2px rgba(0,0,0,.9), 0 0 10px rgba(0,0,0,.6)', visibility: 'visible'}} /> : null}
                   </span>
                 );
@@ -58,7 +58,7 @@ const CardView: React.FC<{c: Card; p: HfTypeProps; last: boolean}> = ({c, p, las
 
 export const HfType: React.FC<HfTypeProps> = (p) => {
   const {fps} = useVideoConfig();
-  const vf = Math.floor(p.videoSec * fps) - 1;
+  const vf = Math.round(p.videoSec * fps);
   if (p.debugRows) {
     return <AbsoluteFill style={{background: '#000'}}>
       {p.scenes.map((c, k) => <CardView key={k} c={c} p={p} last={false} />)}
@@ -67,8 +67,7 @@ export const HfType: React.FC<HfTypeProps> = (p) => {
   return (
     <AbsoluteFill style={{background: '#000'}}>
       <Sequence durationInFrames={vf}>
-        <OffthreadVideo src={staticFile(p.src)} style={{width: '100%', height: '100%', objectFit: 'cover'}}
-          volume={(f) => interpolate(f, [vf - 12, vf], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} />
+        <OffthreadVideo muted src={staticFile(p.src)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
       </Sequence>
       <Sequence from={vf}>
         {p.lastFrame ? <Img src={staticFile(p.lastFrame)} style={{width: '100%', height: '100%', objectFit: 'cover'}} /> : null}
@@ -78,6 +77,7 @@ export const HfType: React.FC<HfTypeProps> = (p) => {
           <CardView c={c} p={p} last={k === p.scenes.length - 1} />
         </Sequence>
       ))}
+      {p.audio ? <Audio src={staticFile(p.audio)} volume={(f) => interpolate(f, [p.durationSec * fps - 36, p.durationSec * fps - 2], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})} /> : null}
       {p.typing ? <Audio src={staticFile(p.typing)} volume={p.typingVolume ?? 0.3} /> : null}
     </AbsoluteFill>
   );

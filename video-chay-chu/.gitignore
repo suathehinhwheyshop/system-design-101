@@ -12,3 +12,6 @@ secrets*
 
 # Giữ timeline bàn giao
 !out/*-timeline.md
+# File tạo lại được bằng scripts/hf01_props.py
+public/hf01-edit.mp4
+public/hf01-audio.wav
