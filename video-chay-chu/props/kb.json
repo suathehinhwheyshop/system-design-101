@@ -1,0 +1,396 @@
+{
+ "src": "kb.mp4",
+ "durationSec": 51.5,
+ "accent": "#ED802E",
+ "scrim": false,
+ "safe": {
+  "left": 0.16,
+  "right": 0.16
+ },
+ "safeCheck": {
+  "left": 0.06,
+  "right": 0.16
+ },
+ "faceZones": [
+  [
+   0,
+   60,
+   0.16,
+   0.33
+  ]
+ ],
+ "bgm": {
+  "src": "bgm/kb.wav",
+  "volume": 0.075,
+  "keys": [
+   [
+    0,
+    0.2
+   ],
+   [
+    2.4,
+    0.2
+   ],
+   [
+    2.8,
+    0.075
+   ],
+   [
+    49.5,
+    0.075
+   ],
+   [
+    50.0,
+    0.13
+   ],
+   [
+    51.5,
+    0.13
+   ]
+  ]
+ },
+ "scenes": [
+  {
+   "kind": "lockup",
+   "fromSec": 0.0,
+   "durationSec": 3.1,
+   "y": 0.125,
+   "rows": [
+    {
+     "small": "thực phẩm bổ sung cho",
+     "at": 1.08
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 1.8,
+   "durationSec": 1.3,
+   "y": 0.675,
+   "rows": [
+    {
+     "big": "Từng nhóm người",
+     "at": 2.44,
+     "bigSize": 96
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "spark",
+     "at": 2.5,
+     "x": 150,
+     "y": 1260,
+     "size": 40,
+     "rot": 0
+    },
+    {
+     "kind": "spark",
+     "at": 2.6,
+     "x": 920,
+     "y": 1380,
+     "size": 32,
+     "rot": 0
+    }
+   ]
+  },
+  {
+   "kind": "groupA",
+   "fromSec": 3.2,
+   "durationSec": 15.4,
+   "data": {
+    "tag": "NHÓM 1",
+    "title": "Người tập thể thao",
+    "titleAt": 4.42,
+    "products": [
+     {
+      "name": "Creatine Monohydrate",
+      "at": 5.98,
+      "icon": "bolt",
+      "chips": [
+       {
+        "t": "Sức mạnh",
+        "at": 8.14
+       },
+       {
+        "t": "Hiệu suất tập",
+        "at": 9.5
+       }
+      ]
+     },
+     {
+      "name": "Vitamin",
+      "at": 11.54,
+      "icon": "capsule",
+      "chips": [
+       {
+        "t": "Miễn dịch",
+        "at": 12.21
+       },
+       {
+        "t": "Toàn diện",
+        "at": 14.27
+       }
+      ]
+     }
+    ],
+    "result": "Phát triển cơ bắp tốt hơn",
+    "resultAt": 16.85,
+    "resultIcon": "muscle",
+    "top": 0.425
+   }
+  },
+  {
+   "kind": "groupA",
+   "fromSec": 18.88,
+   "durationSec": 12.88,
+   "data": {
+    "tag": "NHÓM 2",
+    "title": "Dân văn phòng",
+    "titleAt": 18.89,
+    "sub": "ít tiếp xúc nắng",
+    "subAt": 19.81,
+    "products": [
+     {
+      "name": "Vitamin D3 + K2 + Canxi",
+      "at": 24.71,
+      "icon": "sun",
+      "chips": [
+       {
+        "t": "Xương",
+        "at": 29.95
+       },
+       {
+        "t": "Miễn dịch",
+        "at": 31.15
+       }
+      ]
+     }
+    ],
+    "top": 0.5
+   }
+  },
+  {
+   "kind": "groupA",
+   "fromSec": 31.8,
+   "durationSec": 9.53,
+   "data": {
+    "tag": "NHÓM 3",
+    "title": "Vận động nặng",
+    "titleAt": 33.5,
+    "sub": "cần cải thiện ổ khớp",
+    "subAt": 34.94,
+    "products": [
+     {
+      "name": "Glucosamine",
+      "at": 37.4,
+      "icon": "bone",
+      "chips": [
+       {
+        "t": "+ MSM",
+        "at": 39.16
+       },
+       {
+        "t": "+ Chondroitin",
+        "at": 40.66
+       }
+      ]
+     }
+    ],
+    "top": 0.44
+   }
+  },
+  {
+   "kind": "groupA",
+   "fromSec": 41.36,
+   "durationSec": 5.89,
+   "data": {
+    "tag": "NHÓM 4",
+    "title": "Chăm sóc da",
+    "titleAt": 43.74,
+    "products": [
+     {
+      "name": "Astaxanthin",
+      "at": 45.9,
+      "icon": "spark",
+      "chips": []
+     }
+    ],
+    "top": 0.44
+   }
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 47.3,
+   "durationSec": 4.2,
+   "y": 0.125,
+   "rows": [
+    {
+     "small": "anh em thuộc nhóm nào?",
+     "at": 48.06
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "question",
+     "at": 48.3,
+     "x": 170,
+     "y": 215,
+     "size": 54,
+     "rot": -12
+    },
+    {
+     "kind": "question",
+     "at": 48.5,
+     "x": 900,
+     "y": 230,
+     "size": 44,
+     "rot": 12
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 49.2,
+   "durationSec": 2.3,
+   "y": 0.675,
+   "rows": [
+    {
+     "big": "Comment ngay",
+     "at": 49.3,
+     "bigSize": 88
+    },
+    {
+     "tag": "WheyShop tư vấn",
+     "at": 50.97
+    }
+   ]
+  }
+ ],
+ "videoFx": [
+  {
+   "fromSec": 0,
+   "toSec": 3.1,
+   "zoomFrom": 1.0,
+   "zoomTo": 1.0,
+   "punchAt": [
+    2.44
+   ],
+   "originY": 0.3
+  }
+ ],
+ "sfx": {
+  "pop": "sfx/pop.wav",
+  "cues": [
+   {
+    "at": 1.4,
+    "file": "sfx/riser.wav",
+    "v": 0.22
+   },
+   {
+    "at": 2.44,
+    "file": "sfx/user/boom.wav",
+    "v": 0.2
+   },
+   {
+    "at": 3.05,
+    "file": "sfx/swoosh.wav",
+    "v": 0.22
+   },
+   {
+    "at": 4.42,
+    "file": "sfx/pop.wav",
+    "v": 0.2
+   },
+   {
+    "at": 5.98,
+    "file": "sfx/user/ting.wav",
+    "v": 0.08
+   },
+   {
+    "at": 11.54,
+    "file": "sfx/pop2.wav",
+    "v": 0.2
+   },
+   {
+    "at": 16.85,
+    "file": "sfx/user/boom.wav",
+    "v": 0.13
+   },
+   {
+    "at": 18.75,
+    "file": "sfx/swoosh.wav",
+    "v": 0.2
+   },
+   {
+    "at": 18.89,
+    "file": "sfx/pop.wav",
+    "v": 0.2
+   },
+   {
+    "at": 24.71,
+    "file": "sfx/user/ting.wav",
+    "v": 0.08
+   },
+   {
+    "at": 31.65,
+    "file": "sfx/swoosh.wav",
+    "v": 0.2
+   },
+   {
+    "at": 33.5,
+    "file": "sfx/pop.wav",
+    "v": 0.2
+   },
+   {
+    "at": 37.4,
+    "file": "sfx/user/ting.wav",
+    "v": 0.08
+   },
+   {
+    "at": 39.16,
+    "file": "sfx/pop2.wav",
+    "v": 0.18
+   },
+   {
+    "at": 40.66,
+    "file": "sfx/pop2.wav",
+    "v": 0.18
+   },
+   {
+    "at": 41.25,
+    "file": "sfx/swoosh.wav",
+    "v": 0.2
+   },
+   {
+    "at": 43.74,
+    "file": "sfx/pop.wav",
+    "v": 0.2
+   },
+   {
+    "at": 45.9,
+    "file": "sfx/sparkle.wav",
+    "v": 0.16
+   },
+   {
+    "at": 47.2,
+    "file": "sfx/swoosh.wav",
+    "v": 0.2
+   },
+   {
+    "at": 48.3,
+    "file": "sfx/pop2.wav",
+    "v": 0.2
+   },
+   {
+    "at": 49.3,
+    "file": "sfx/user/boom.wav",
+    "v": 0.2
+   },
+   {
+    "at": 50.97,
+    "file": "sfx/user/ting.wav",
+    "v": 0.08
+   }
+  ]
+ }
+}

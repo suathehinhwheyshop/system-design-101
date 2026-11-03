@@ -1,0 +1,208 @@
+{
+ "src": "hf-base.mp4",
+ "durationSec": 26.6,
+ "accent": "#E6D3B3",
+ "bigFont": "sans",
+ "slideBg": "#F3EEE5",
+ "slideAccent": "#B08D57",
+ "scenes": [
+  {
+   "kind": "lockup",
+   "fromSec": 0.0,
+   "durationSec": 1.82,
+   "y": 0.28,
+   "rows": [
+    {
+     "small": "Một cơ thể",
+     "at": 0.0
+    },
+    {
+     "big": "Khỏe mạnh",
+     "bigSize": 130,
+     "at": 0.64
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 1.86,
+   "durationSec": 2.59,
+   "y": 0.28,
+   "rows": [
+    {
+     "small": "những buổi tập hiệu quả",
+     "at": 1.88
+    },
+    {
+     "small": "và cách bạn",
+     "at": 2.66
+    },
+    {
+     "big": "Vận động",
+     "bigSize": 130,
+     "at": 3.12
+    },
+    {
+     "small": "mỗi ngày",
+     "at": 3.42
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 5.0,
+   "durationSec": 3.05,
+   "y": 0.27,
+   "rows": [
+    {
+     "big": "Đi bộ",
+     "bigSize": 120,
+     "at": 5.0
+    },
+    {
+     "big": "Đạp xe",
+     "bigSize": 120,
+     "at": 5.72
+    },
+    {
+     "small": "hay đơn giản là",
+     "at": 6.08
+    },
+    {
+     "big": "Giảm thời gian",
+     "bigSize": 96,
+     "at": 6.8
+    },
+    {
+     "small": "ngồi một chỗ",
+     "at": 7.32
+    }
+   ]
+  },
+  {
+   "kind": "slide",
+   "fromSec": 8.2,
+   "durationSec": 3.55,
+   "kicker": "Vận động đều đặn giúp",
+   "title": "Khỏe hơn\nmỗi ngày",
+   "titleAt": 8.2,
+   "items": [
+    {
+     "t": "Cải thiện sức khỏe",
+     "at": 8.28
+    },
+    {
+     "t": "Tăng sức bền",
+     "at": 8.98
+    },
+    {
+     "t": "Thói quen tích cực",
+     "at": 10.44
+    }
+   ],
+   "image": "img/hf-sticker.png",
+   "imageAt": 8.45
+  },
+  {
+   "kind": "blur",
+   "fromSec": 11.6,
+   "durationSec": 0.4
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 12.6,
+   "durationSec": 3.6,
+   "y": 0.22,
+   "rows": [
+    {
+     "small": "chúng mình khuyến khích học viên",
+     "at": 12.62
+    },
+    {
+     "big": "Vận động",
+     "bigSize": 120,
+     "at": 13.62
+    },
+    {
+     "small": "cả ngoài giờ tập",
+     "at": 13.94
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 17.0,
+   "durationSec": 2.95,
+   "y": 0.27,
+   "rows": [
+    {
+     "small": "ghé House de Forme",
+     "at": 17.1
+    },
+    {
+     "big": "Đi bộ · Đạp xe",
+     "bigSize": 104,
+     "at": 17.96
+    },
+    {
+     "big": "Không mất phí",
+     "bigSize": 104,
+     "at": 18.96
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 20.4,
+   "durationSec": 2.9,
+   "y": 0.27,
+   "rows": [
+    {
+     "small": "điều chúng mình hướng đến",
+     "at": 20.54
+    },
+    {
+     "small": "không chỉ giúp bạn",
+     "at": 21.3
+    },
+    {
+     "big": "Tập tốt hơn",
+     "bigSize": 120,
+     "at": 21.96
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 23.35,
+   "durationSec": 3.15,
+   "y": 0.27,
+   "rows": [
+    {
+     "small": "mà còn cùng bạn xây dựng",
+     "at": 23.4
+    },
+    {
+     "big": "Lối sống",
+     "bigSize": 130,
+     "at": 23.96
+    },
+    {
+     "small": "lành mạnh",
+     "at": 24.34
+    },
+    {
+     "small": "năng động · bền vững",
+     "at": 24.94
+    }
+   ]
+  }
+ ],
+ "sfx": {
+  "pop": "sfx/pop.wav",
+  "tick": "sfx/tick.wav",
+  "vPop": 0.28,
+  "vTick": 0.22
+ },
+ "scrim": false
+}

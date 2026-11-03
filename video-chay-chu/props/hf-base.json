@@ -1,0 +1,88 @@
+{
+ "durationSec": 26.6,
+ "shots": [
+  {
+   "src": "nguon-04.mp4",
+   "fromSec": 6.5,
+   "start": 0,
+   "end": 4.75
+  },
+  {
+   "src": "nguon-05-cham050.mp4",
+   "fromSec": 0,
+   "start": 4.75,
+   "end": 8.15,
+   "transitionIn": {
+    "type": "frame",
+    "durSec": 0.6
+   }
+  },
+  {
+   "src": "nguon-02.mp4",
+   "fromSec": 0,
+   "start": 8.15,
+   "end": 11.85,
+   "transitionIn": {
+    "type": "dissolve",
+    "durSec": 0.4
+   }
+  },
+  {
+   "src": "nguon-01-cham075.mp4",
+   "fromSec": 0,
+   "start": 11.85,
+   "end": 16.55,
+   "transitionIn": {
+    "type": "dissolve",
+    "durSec": 0.4
+   }
+  },
+  {
+   "src": "nguon-02.mp4",
+   "fromSec": 6.5,
+   "start": 16.55,
+   "end": 19.95,
+   "transitionIn": {
+    "type": "frame",
+    "durSec": 0.6
+   }
+  },
+  {
+   "src": "nguon-04.mp4",
+   "fromSec": 28.0,
+   "start": 19.95,
+   "end": 23.35,
+   "transitionIn": {
+    "type": "dissolve",
+    "durSec": 0.4
+   }
+  },
+  {
+   "src": "nguon-03.mp4",
+   "fromSec": 0,
+   "start": 23.35,
+   "end": 26.6,
+   "transitionIn": {
+    "type": "dissolve",
+    "durSec": 0.4
+   }
+  }
+ ],
+ "segments": [],
+ "stepCards": {
+  "images": [
+   "img/s4.png",
+   "img/s3.png",
+   "img/s1.png",
+   "img/s2.png"
+  ],
+  "fromSec": 13.8,
+  "durationSec": 2.7,
+  "gapSec": 0.45,
+  "layout": "cascade"
+ },
+ "voice": "am-thanh-mau-v2.wav",
+ "music": "",
+ "logo": "img/logo-trang.png",
+ "fadeOutSec": 0.4
+}

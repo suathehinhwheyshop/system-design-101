@@ -1,0 +1,542 @@
+{
+ "src": "creatine.mp4",
+ "durationSec": 59.81,
+ "accent": "#ED802E",
+ "scrim": false,
+ "safe": {
+  "left": 0.16,
+  "right": 0.16
+ },
+ "safeCheck": {
+  "left": 0.06,
+  "right": 0.16
+ },
+ "faceZones": [
+  [
+   0,
+   60,
+   0.16,
+   0.4
+  ],
+  [
+   0,
+   60,
+   0.4,
+   0.61
+  ]
+ ],
+ "videoFx": [
+  {
+   "fromSec": 0,
+   "toSec": 4.1,
+   "zoomFrom": 1.0,
+   "zoomTo": 1.0,
+   "punchAt": [
+    0.92,
+    1.66
+   ],
+   "originY": 0.3
+  },
+  {
+   "fromSec": 4.1,
+   "toSec": 4.449999999999999,
+   "zoomFrom": 1.0,
+   "zoomTo": 1.1,
+   "originY": 0.0
+  },
+  {
+   "fromSec": 4.449999999999999,
+   "toSec": 31.06,
+   "zoomFrom": 1.1,
+   "zoomTo": 1.1,
+   "originY": 0.0
+  },
+  {
+   "fromSec": 31.06,
+   "toSec": 31.4,
+   "zoomFrom": 1.1,
+   "zoomTo": 1.0,
+   "originY": 0.0
+  },
+  {
+   "fromSec": 31.86,
+   "toSec": 32.21,
+   "zoomFrom": 1.0,
+   "zoomTo": 1.1,
+   "originY": 0.0
+  },
+  {
+   "fromSec": 32.21,
+   "toSec": 42.86,
+   "zoomFrom": 1.1,
+   "zoomTo": 1.1,
+   "originY": 0.0
+  },
+  {
+   "fromSec": 42.86,
+   "toSec": 43.2,
+   "zoomFrom": 1.1,
+   "zoomTo": 1.0,
+   "originY": 0.0
+  },
+  {
+   "fromSec": 43.86,
+   "toSec": 44.21,
+   "zoomFrom": 1.0,
+   "zoomTo": 1.1,
+   "originY": 0.0
+  },
+  {
+   "fromSec": 44.21,
+   "toSec": 52.86,
+   "zoomFrom": 1.1,
+   "zoomTo": 1.1,
+   "originY": 0.0
+  },
+  {
+   "fromSec": 52.86,
+   "toSec": 53.2,
+   "zoomFrom": 1.1,
+   "zoomTo": 1.0,
+   "originY": 0.0
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "lockup",
+   "fromSec": 0.0,
+   "durationSec": 1.62,
+   "y": 0.115,
+   "rows": [
+    {
+     "small": "giải đáp thắc mắc",
+     "at": 0.0
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 0.9,
+   "durationSec": 0.72,
+   "y": 0.68,
+   "rows": [
+    {
+     "big": "Cực nhanh",
+     "at": 0.92,
+     "bigSize": 125,
+     "icon": "bolt",
+     "iconScale": 0.55
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "spark",
+     "at": 1.0,
+     "x": 170,
+     "y": 1250,
+     "size": 40,
+     "rot": 0
+    },
+    {
+     "kind": "spark",
+     "at": 1.1,
+     "x": 870,
+     "y": 1390,
+     "size": 34,
+     "rot": 0
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 1.64,
+   "durationSec": 2.48,
+   "y": 0.115,
+   "rows": [
+    {
+     "tag": "Monohydrate",
+     "at": 2.14
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "question",
+     "at": 2.3,
+     "x": 190,
+     "y": 215,
+     "size": 58,
+     "rot": -12
+    },
+    {
+     "kind": "question",
+     "at": 2.5,
+     "x": 880,
+     "y": 230,
+     "size": 46,
+     "rot": 12
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 1.64,
+   "durationSec": 2.48,
+   "y": 0.68,
+   "rows": [
+    {
+     "big": "Creatine",
+     "at": 1.66,
+     "bigSize": 125
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "muscle",
+     "at": 3.0,
+     "x": 880,
+     "y": 1390,
+     "size": 56,
+     "rot": 0
+    }
+   ]
+  },
+  {
+   "kind": "crinfo",
+   "fromSec": 4.14,
+   "durationSec": 12.48,
+   "data": {
+    "v": 1,
+    "at": {
+     "title": 4.92,
+     "c0": 6.9,
+     "badge": 8.38,
+     "c1": 14.0,
+     "c2": 15.12
+    }
+   }
+  },
+  {
+   "kind": "crinfo",
+   "fromSec": 16.64,
+   "durationSec": 7.56,
+   "data": {
+    "v": 2,
+    "at": {
+     "title": 16.68,
+     "cal": 19.16,
+     "dose": 20.96,
+     "any": 22.36
+    }
+   }
+  },
+  {
+   "kind": "crinfo",
+   "fromSec": 24.24,
+   "durationSec": 7.16,
+   "data": {
+    "v": 3,
+    "at": {
+     "title": 24.34,
+     "m0": 24.6,
+     "m2": 24.7,
+     "m3": 27.52,
+     "m1": 28.2,
+     "tip": 30.26
+    }
+   }
+  },
+  {
+   "kind": "crinfo",
+   "fromSec": 31.9,
+   "durationSec": 11.3,
+   "data": {
+    "v": 4,
+    "at": {
+     "title": 32.78,
+     "no": 34.3,
+     "daily": 35.6,
+     "bar": 37.56,
+     "tip": 41.95
+    }
+   }
+  },
+  {
+   "kind": "crinfo",
+   "fromSec": 43.9,
+   "durationSec": 9.3,
+   "data": {
+    "v": 5,
+    "at": {
+     "title": 44.63,
+     "ok": 46.61,
+     "no": 51.05
+    }
+   }
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 53.29,
+   "durationSec": 2.11,
+   "y": 0.115,
+   "rows": [
+    {
+     "small": "anh em muốn tìm creatine",
+     "at": 53.29
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 55.42,
+   "durationSec": 1.26,
+   "y": 0.68,
+   "rows": [
+    {
+     "big": "Giá ok",
+     "at": 55.43,
+     "bigSize": 125
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "spark",
+     "at": 55.5,
+     "x": 190,
+     "y": 1250,
+     "size": 36,
+     "rot": 0
+    },
+    {
+     "kind": "spark",
+     "at": 55.6,
+     "x": 860,
+     "y": 1360,
+     "size": 30,
+     "rot": 0
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 56.7,
+   "durationSec": 0.66,
+   "y": 0.68,
+   "rows": [
+    {
+     "big": "Dùng tốt",
+     "at": 56.71,
+     "bigSize": 125
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 57.38,
+   "durationSec": 2.42,
+   "y": 0.115,
+   "rows": [
+    {
+     "tag": "Creatine",
+     "at": 57.39
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 57.38,
+   "durationSec": 2.42,
+   "y": 0.68,
+   "rows": [
+    {
+     "big": "Monohydrate",
+     "at": 57.91,
+     "bigSize": 110
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "muscle",
+     "at": 58.0,
+     "x": 180,
+     "y": 1260,
+     "size": 58,
+     "rot": 0
+    },
+    {
+     "kind": "spark",
+     "at": 58.1,
+     "x": 870,
+     "y": 1350,
+     "size": 36,
+     "rot": 0
+    }
+   ]
+  }
+ ],
+ "sfx": {
+  "pop": "sfx/pop.wav",
+  "cues": [
+   {
+    "at": 0.0,
+    "file": "sfx/riser.wav",
+    "v": 0.22
+   },
+   {
+    "at": 0.92,
+    "file": "sfx/user/boom.wav",
+    "v": 0.2
+   },
+   {
+    "at": 1.66,
+    "file": "sfx/pop.wav",
+    "v": 0.22
+   },
+   {
+    "at": 2.14,
+    "file": "sfx/user/ting.wav",
+    "v": 0.08
+   },
+   {
+    "at": 3.95,
+    "file": "sfx/swoosh.wav",
+    "v": 0.22
+   },
+   {
+    "at": 4.92,
+    "file": "sfx/pop.wav",
+    "v": 0.2
+   },
+   {
+    "at": 6.9,
+    "file": "sfx/pop2.wav",
+    "v": 0.2
+   },
+   {
+    "at": 14.0,
+    "file": "sfx/pop2.wav",
+    "v": 0.18
+   },
+   {
+    "at": 15.12,
+    "file": "sfx/pop2.wav",
+    "v": 0.18
+   },
+   {
+    "at": 16.35,
+    "file": "sfx/swoosh.wav",
+    "v": 0.2
+   },
+   {
+    "at": 16.7,
+    "file": "sfx/pop.wav",
+    "v": 0.18
+   },
+   {
+    "at": 20.96,
+    "file": "sfx/user/ting.wav",
+    "v": 0.09
+   },
+   {
+    "at": 24.1,
+    "file": "sfx/swoosh.wav",
+    "v": 0.2
+   },
+   {
+    "at": 24.34,
+    "file": "sfx/pop.wav",
+    "v": 0.18
+   },
+   {
+    "at": 31.75,
+    "file": "sfx/swoosh.wav",
+    "v": 0.2
+   },
+   {
+    "at": 32.78,
+    "file": "sfx/pop.wav",
+    "v": 0.18
+   },
+   {
+    "at": 34.3,
+    "file": "sfx/user/bonk.wav",
+    "v": 0.2
+   },
+   {
+    "at": 41.95,
+    "file": "sfx/user/boom.wav",
+    "v": 0.14
+   },
+   {
+    "at": 43.75,
+    "file": "sfx/swoosh.wav",
+    "v": 0.2
+   },
+   {
+    "at": 44.63,
+    "file": "sfx/pop.wav",
+    "v": 0.18
+   },
+   {
+    "at": 46.61,
+    "file": "sfx/user/drip.wav",
+    "v": 0.22
+   },
+   {
+    "at": 50.23,
+    "file": "sfx/user/drip.wav",
+    "v": 0.18
+   },
+   {
+    "at": 51.05,
+    "file": "sfx/user/bonk.wav",
+    "v": 0.2
+   },
+   {
+    "at": 55.43,
+    "file": "sfx/user/tinh-tien.wav",
+    "v": 0.32
+   },
+   {
+    "at": 57.91,
+    "file": "sfx/user/boom.wav",
+    "v": 0.22
+   },
+   {
+    "at": 57.95,
+    "file": "sfx/sparkle.wav",
+    "v": 0.12
+   }
+  ]
+ },
+ "fadeOutSec": 0.5,
+ "bgm": {
+  "src": "bgm/creatine.wav",
+  "volume": 0.075,
+  "keys": [
+   [
+    0,
+    0.2
+   ],
+   [
+    0.9,
+    0.2
+   ],
+   [
+    1.3,
+    0.075
+   ],
+   [
+    57.9,
+    0.075
+   ],
+   [
+    58.4,
+    0.13
+   ],
+   [
+    59.8,
+    0.13
+   ]
+  ]
+ }
+}

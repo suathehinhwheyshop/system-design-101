@@ -1,0 +1,583 @@
+{
+ "src": "v1030.mp4",
+ "durationSec": 30.14,
+ "accent": "#ED802E",
+ "scrim": false,
+ "safe": {
+  "left": 0.16,
+  "right": 0.16
+ },
+ "safeCheck": {
+  "left": 0.06,
+  "right": 0.16
+ },
+ "faceZones": [
+  [
+   0,
+   8.5,
+   0.25,
+   0.46
+  ],
+  [
+   8.5,
+   12.1,
+   0.38,
+   0.77
+  ],
+  [
+   17.4,
+   30.2,
+   0.25,
+   0.46
+  ]
+ ],
+ "videoFx": [
+  {
+   "fromSec": 0,
+   "toSec": 4.98,
+   "zoomFrom": 1.0,
+   "zoomTo": 1.08,
+   "punchAt": [
+    4.14
+   ],
+   "originY": 0.32
+  }
+ ],
+ "scenes": [
+  {
+   "kind": "lockup",
+   "fromSec": 0.0,
+   "durationSec": 1.95,
+   "y": 0.175,
+   "rows": [
+    {
+     "small": "lọ này",
+     "at": 0.06
+    },
+    {
+     "big": "Có gì?",
+     "at": 0.5,
+     "bigSize": 150
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "question",
+     "at": 0.55,
+     "x": 175,
+     "y": 300,
+     "size": 78,
+     "rot": -14
+    },
+    {
+     "kind": "question",
+     "at": 0.75,
+     "x": 905,
+     "y": 410,
+     "size": 58,
+     "rot": 12
+    },
+    {
+     "kind": "spark",
+     "at": 0.9,
+     "x": 250,
+     "y": 470,
+     "size": 34,
+     "rot": 0
+    },
+    {
+     "kind": "spark",
+     "at": 1.1,
+     "x": 830,
+     "y": 265,
+     "size": 28,
+     "rot": 0
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 1.98,
+   "durationSec": 1.28,
+   "y": 0.175,
+   "rows": [
+    {
+     "small": "chứa vitamin",
+     "at": 2.0
+    },
+    {
+     "big": "Duy trì",
+     "at": 2.8,
+     "bigSize": 140,
+     "icon": "drop",
+     "iconScale": 0.62
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "sun",
+     "at": 2.05,
+     "x": 190,
+     "y": 290,
+     "size": 62,
+     "rot": 0
+    },
+    {
+     "kind": "capsule",
+     "at": 2.3,
+     "x": 890,
+     "y": 300,
+     "size": 62,
+     "rot": -20
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 3.28,
+   "durationSec": 1.7,
+   "y": 0.175,
+   "rows": [
+    {
+     "small": "trong máu lên tới",
+     "at": 3.28
+    },
+    {
+     "big": "72 giờ",
+     "at": 4.14,
+     "bigSize": 170,
+     "icon": "clock",
+     "iconScale": 0.6
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "spark",
+     "at": 4.2,
+     "x": 150,
+     "y": 300,
+     "size": 44,
+     "rot": 0
+    },
+    {
+     "kind": "spark",
+     "at": 4.3,
+     "x": 925,
+     "y": 300,
+     "size": 36,
+     "rot": 0
+    },
+    {
+     "kind": "spark",
+     "at": 4.45,
+     "x": 215,
+     "y": 470,
+     "size": 28,
+     "rot": 0
+    },
+    {
+     "kind": "spark",
+     "at": 4.5,
+     "x": 860,
+     "y": 480,
+     "size": 30,
+     "rot": 0
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 5.02,
+   "durationSec": 1.28,
+   "y": 0.175,
+   "rows": [
+    {
+     "type": "Sports Research",
+     "at": 5.38
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "spark",
+     "at": 5.5,
+     "x": 215,
+     "y": 345,
+     "size": 30,
+     "rot": 0
+    },
+    {
+     "kind": "spark",
+     "at": 5.9,
+     "x": 860,
+     "y": 345,
+     "size": 26,
+     "rot": 0
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 6.34,
+   "durationSec": 1.42,
+   "y": 0.175,
+   "rows": [
+    {
+     "small": "thương hiệu thực phẩm",
+     "at": 6.4
+    },
+    {
+     "small": "bổ sung nổi tiếng",
+     "at": 7.12
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 7.78,
+   "durationSec": 0.67,
+   "y": 0.175,
+   "rows": [
+    {
+     "small": "đến từ",
+     "at": 7.82
+    },
+    {
+     "tag": "Mỹ · USA",
+     "at": 8.2,
+     "icon": "flag",
+     "iconScale": 0.5,
+     "bigSize": 150
+    }
+   ]
+  },
+  {
+   "kind": "blur",
+   "fromSec": 8.33,
+   "durationSec": 0.4
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 8.6,
+   "durationSec": 1.38,
+   "y": 0.22,
+   "rows": [
+    {
+     "small": "lọ này có",
+     "at": 8.6
+    },
+    {
+     "big": "160 viên",
+     "at": 9.04,
+     "bigSize": 150,
+     "icon": "capsule",
+     "iconScale": 0.55
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "capsule",
+     "at": 9.15,
+     "x": 170,
+     "y": 560,
+     "size": 52,
+     "rot": -25
+    },
+    {
+     "kind": "capsule",
+     "at": 9.3,
+     "x": 880,
+     "y": 330,
+     "size": 44,
+     "rot": 20
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 10.05,
+   "durationSec": 1.03,
+   "y": 0.22,
+   "rows": [
+    {
+     "small": "mỗi ngày",
+     "at": 10.32
+    },
+    {
+     "big": "1 viên",
+     "at": 10.66,
+     "bigSize": 150,
+     "icon": "capsule",
+     "iconScale": 0.55
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 11.12,
+   "durationSec": 0.88,
+   "y": 0.22,
+   "rows": [
+    {
+     "small": "dùng được hơn",
+     "at": 11.24
+    },
+    {
+     "big": "5 tháng",
+     "at": 11.68,
+     "bigSize": 150,
+     "icon": "calendar",
+     "iconScale": 0.55
+    }
+   ]
+  },
+  {
+   "kind": "dose",
+   "fromSec": 12.05,
+   "durationSec": 5.3,
+   "data": {
+    "kicker": "Mỗi viên cung cấp",
+    "title": "D3 + K2",
+    "titleAt": 12.1,
+    "plusAt": 14.16,
+    "cards": [
+     {
+      "icon": "sun",
+      "name": "Vitamin D3",
+      "value": 5000,
+      "unit": "IU",
+      "at": 12.42,
+      "valueAt": 12.6
+     },
+     {
+      "icon": "capsule",
+      "name": "Vitamin K2",
+      "value": 100,
+      "unit": "mcg",
+      "at": 14.42,
+      "valueAt": 14.6,
+      "chip": "dạng MK-7",
+      "chipAt": 16.56
+     }
+    ]
+   }
+  },
+  {
+   "kind": "flow",
+   "fromSec": 17.38,
+   "durationSec": 10.6,
+   "data": {
+    "top": 0.48,
+    "titleAt": 17.4,
+    "rows": [
+     {
+      "name": "D3",
+      "icon": "sun",
+      "at": 17.66,
+      "arrowAt": 19.4,
+      "chips": [
+       {
+        "t": "Canxi",
+        "at": 19.84
+       },
+       {
+        "t": "Phốt pho",
+        "at": 20.64
+       }
+      ],
+      "end": "Xương khỏe",
+      "endIcon": "bone",
+      "endAt": 21.64
+     },
+     {
+      "name": "K2",
+      "icon": "capsule",
+      "at": 22.88,
+      "arrowAt": 23.44,
+      "chips": [
+       {
+        "t": "Đưa canxi",
+        "at": 23.7
+       }
+      ],
+      "end": "Tới xương",
+      "endIcon": "bone",
+      "endAt": 24.14
+     }
+    ],
+    "badge": "MK-7 · trong máu 72 giờ",
+    "badgeAt": 24.88,
+    "highlightAt": 27.12
+   }
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 28.0,
+   "durationSec": 2.1,
+   "y": 0.175,
+   "rows": [
+    {
+     "small": "hỗ trợ duy trì lượng",
+     "at": 28.0
+    },
+    {
+     "big": "Canxi ổn định",
+     "at": 28.92,
+     "bigSize": 125
+    }
+   ],
+   "floaters": [
+    {
+     "kind": "bone",
+     "at": 29.0,
+     "x": 170,
+     "y": 300,
+     "size": 58,
+     "rot": -15
+    },
+    {
+     "kind": "spark",
+     "at": 29.1,
+     "x": 900,
+     "y": 300,
+     "size": 34,
+     "rot": 0
+    }
+   ]
+  }
+ ],
+ "sfx": {
+  "pop": "sfx/pop.wav",
+  "cues": [
+   {
+    "at": 0.5,
+    "file": "sfx/pop.wav",
+    "v": 0.24
+   },
+   {
+    "at": 0.55,
+    "file": "sfx/tick.wav",
+    "v": 0.14
+   },
+   {
+    "at": 2.8,
+    "file": "sfx/pop.wav",
+    "v": 0.24
+   },
+   {
+    "at": 4.14,
+    "file": "sfx/hit.wav",
+    "v": 0.32
+   },
+   {
+    "at": 8.2,
+    "file": "sfx/pop.wav",
+    "v": 0.24
+   },
+   {
+    "at": 8.31,
+    "file": "sfx/whoosh.wav",
+    "v": 0.16
+   },
+   {
+    "at": 9.04,
+    "file": "sfx/ding.wav",
+    "v": 0.2
+   },
+   {
+    "at": 10.66,
+    "file": "sfx/pop.wav",
+    "v": 0.22
+   },
+   {
+    "at": 11.68,
+    "file": "sfx/pop.wav",
+    "v": 0.22
+   },
+   {
+    "at": 11.85,
+    "file": "sfx/swish.wav",
+    "v": 0.2
+   },
+   {
+    "at": 12.6,
+    "file": "sfx/pop.wav",
+    "v": 0.26
+   },
+   {
+    "at": 14.16,
+    "file": "sfx/tick.wav",
+    "v": 0.2
+   },
+   {
+    "at": 14.6,
+    "file": "sfx/pop.wav",
+    "v": 0.24
+   },
+   {
+    "at": 16.56,
+    "file": "sfx/tick.wav",
+    "v": 0.2
+   },
+   {
+    "at": 17.2,
+    "file": "sfx/swish.wav",
+    "v": 0.2
+   },
+   {
+    "at": 17.66,
+    "file": "sfx/pop.wav",
+    "v": 0.22
+   },
+   {
+    "at": 19.84,
+    "file": "sfx/tick.wav",
+    "v": 0.18
+   },
+   {
+    "at": 20.64,
+    "file": "sfx/tick.wav",
+    "v": 0.18
+   },
+   {
+    "at": 21.64,
+    "file": "sfx/pop.wav",
+    "v": 0.22
+   },
+   {
+    "at": 22.88,
+    "file": "sfx/pop.wav",
+    "v": 0.22
+   },
+   {
+    "at": 23.7,
+    "file": "sfx/tick.wav",
+    "v": 0.18
+   },
+   {
+    "at": 24.14,
+    "file": "sfx/pop.wav",
+    "v": 0.22
+   },
+   {
+    "at": 24.88,
+    "file": "sfx/ding.wav",
+    "v": 0.18
+   },
+   {
+    "at": 27.12,
+    "file": "sfx/hit.wav",
+    "v": 0.28
+   },
+   {
+    "at": 27.8,
+    "file": "sfx/swish.wav",
+    "v": 0.18
+   },
+   {
+    "at": 28.92,
+    "file": "sfx/ding.wav",
+    "v": 0.2
+   }
+  ]
+ }
+}

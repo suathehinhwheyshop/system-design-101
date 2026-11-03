@@ -1,0 +1,487 @@
+{
+ "src": "ws-magie.mp4",
+ "durationSec": 34.7,
+ "accent": "#F28A2E",
+ "scenes": [
+  {
+   "kind": "lockup",
+   "fromSec": 0.0,
+   "durationSec": 2.25,
+   "y": 0.575,
+   "rows": [
+    {
+     "small": "bạn đang cảm thấy",
+     "at": 0.0
+    },
+    {
+     "icon": "battery",
+     "big": "Mệt mỏi",
+     "bigSize": 150,
+     "at": 1.14
+    },
+    {
+     "tag": "Khó ngủ?",
+     "at": 1.52
+    }
+   ]
+  },
+  {
+   "kind": "blur",
+   "fromSec": 2.15,
+   "durationSec": 0.4
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 2.4,
+   "durationSec": 1.55,
+   "y": 0.57,
+   "rows": [
+    {
+     "small": "tập luyện xong không thấy",
+     "at": 2.4
+    },
+    {
+     "big": "Thoải mái",
+     "bigSize": 140,
+     "at": 3.28
+    },
+    {
+     "tag": "như trước?",
+     "at": 3.62
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 4.7,
+   "durationSec": 0.95,
+   "y": 0.49,
+   "rows": [
+    {
+     "small": "dấu hiệu",
+     "at": 4.74
+    },
+    {
+     "big": "Thiếu magie",
+     "at": 5.1,
+     "bigSize": 110
+    }
+   ]
+  },
+  {
+   "kind": "stat",
+   "fromSec": 6.2,
+   "durationSec": 5.15,
+   "title": "Magie tham gia",
+   "titleAt": 6.24,
+   "num": 300,
+   "numSuffix": "+",
+   "numAt": 6.68,
+   "sub": "phản ứng trong cơ thể",
+   "subAt": 6.98,
+   "rel": "liên quan đến",
+   "relAt": 7.76,
+   "items": [
+    {
+     "t": "Chức năng cơ",
+     "at": 8.32
+    },
+    {
+     "t": "Thần kinh",
+     "at": 8.9
+    },
+    {
+     "t": "Tạo năng lượng",
+     "at": 9.94
+    },
+    {
+     "t": "Nhịp tim bình thường",
+     "at": 10.5
+    }
+   ]
+  },
+  {
+   "kind": "blur",
+   "fromSec": 11.15,
+   "durationSec": 0.4
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 11.3,
+   "durationSec": 2.42,
+   "y": 0.475,
+   "rows": [
+    {
+     "type": "Webber Magnesium",
+     "at": 11.3
+    },
+    {
+     "big": "Bisglycinate",
+     "at": 12.28,
+     "bigSize": 96,
+     "neon": true
+    },
+    {
+     "small": "dạng hấp thụ tốt",
+     "at": 12.86
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 13.76,
+   "durationSec": 1.24,
+   "y": 0.49,
+   "rows": [
+    {
+     "big": "200mg",
+     "at": 14.14,
+     "bigSize": 110
+    },
+    {
+     "small": "mỗi viên",
+     "at": 14.2
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 15.05,
+   "durationSec": 1.9,
+   "y": 0.49,
+   "rows": [
+    {
+     "big": "1 viên",
+     "at": 15.62,
+     "bigSize": 110
+    },
+    {
+     "small": "mỗi ngày",
+     "at": 15.8
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 17.05,
+   "durationSec": 1.35,
+   "y": 0.49,
+   "rows": [
+    {
+     "small": "2 size cho bạn lựa",
+     "at": 17.08
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 18.42,
+   "durationSec": 1.0,
+   "y": 0.49,
+   "rows": [
+    {
+     "big": "60 viên",
+     "at": 18.46,
+     "bigSize": 110
+    },
+    {
+     "small": "dùng thử",
+     "at": 18.98
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 19.45,
+   "durationSec": 2.15,
+   "y": 0.49,
+   "rows": [
+    {
+     "big": "120 viên",
+     "at": 19.46,
+     "bigSize": 110
+    },
+    {
+     "small": "tiết kiệm hơn",
+     "at": 21.08
+    }
+   ]
+  },
+  {
+   "kind": "blur",
+   "fromSec": 21.47,
+   "durationSec": 0.4
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 21.66,
+   "durationSec": 1.59,
+   "y": 0.49,
+   "rows": [
+    {
+     "small": "tính ra chỉ",
+     "at": 21.66
+    },
+    {
+     "big": "5.000đ",
+     "at": 22.2,
+     "bigSize": 120
+    },
+    {
+     "small": "/ ngày",
+     "at": 22.82
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 23.3,
+   "durationSec": 1.55,
+   "y": 0.49,
+   "rows": [
+    {
+     "big": "Không chỉ",
+     "at": 23.3,
+     "bigSize": 105
+    },
+    {
+     "small": "người tập gym",
+     "at": 23.68
+    },
+    {
+     "small": "mới cần magie",
+     "at": 24.1
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 24.88,
+   "durationSec": 1.07,
+   "y": 0.49,
+   "rows": [
+    {
+     "small": "ai hay",
+     "at": 24.88
+    },
+    {
+     "big": "Mất ngủ",
+     "at": 25.5,
+     "bigSize": 100
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 25.97,
+   "durationSec": 0.58,
+   "y": 0.49,
+   "rows": [
+    {
+     "small": "ai hay",
+     "at": 25.97
+    },
+    {
+     "big": "Căng thẳng",
+     "at": 25.98,
+     "bigSize": 100
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 26.57,
+   "durationSec": 2.28,
+   "y": 0.49,
+   "rows": [
+    {
+     "big": "Thiếu dinh dưỡng",
+     "at": 26.58,
+     "bigSize": 92
+    },
+    {
+     "small": "bổ sung vào",
+     "at": 27.6
+    },
+    {
+     "small": "routine hằng ngày",
+     "at": 28.16
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 28.94,
+   "durationSec": 1.31,
+   "y": 0.49,
+   "rows": [
+    {
+     "small": "ưu đãi giá tốt",
+     "at": 28.94
+    },
+    {
+     "big": "Free ship",
+     "at": 29.78,
+     "bigSize": 115
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 30.28,
+   "durationSec": 2.07,
+   "y": 0.49,
+   "rows": [
+    {
+     "small": "toàn quốc tại WheyShop",
+     "at": 30.28
+    },
+    {
+     "small": "bấm mua ngay ↓",
+     "at": 31.1
+    }
+   ]
+  }
+ ],
+ "scrim": false,
+ "safe": {
+  "left": 0.16,
+  "right": 0.16
+ },
+ "disclaimerTop": 0.075,
+ "sfx": {
+  "pop": "sfx/pop.wav",
+  "cues": [
+   {
+    "at": 1.14,
+    "file": "sfx/hit.wav",
+    "v": 0.32
+   },
+   {
+    "at": 1.52,
+    "file": "sfx/pop.wav",
+    "v": 0.24
+   },
+   {
+    "at": 2.13,
+    "file": "sfx/swish.wav",
+    "v": 0.22
+   },
+   {
+    "at": 3.28,
+    "file": "sfx/pop.wav",
+    "v": 0.26
+   },
+   {
+    "at": 5.1,
+    "file": "sfx/pop.wav",
+    "v": 0.28
+   },
+   {
+    "at": 6.0,
+    "file": "sfx/swish.wav",
+    "v": 0.2
+   },
+   {
+    "at": 6.68,
+    "file": "sfx/pop.wav",
+    "v": 0.28
+   },
+   {
+    "at": 8.32,
+    "file": "sfx/tick.wav",
+    "v": 0.2
+   },
+   {
+    "at": 8.9,
+    "file": "sfx/tick.wav",
+    "v": 0.2
+   },
+   {
+    "at": 9.94,
+    "file": "sfx/tick.wav",
+    "v": 0.2
+   },
+   {
+    "at": 10.5,
+    "file": "sfx/tick.wav",
+    "v": 0.2
+   },
+   {
+    "at": 11.15,
+    "file": "sfx/swish.wav",
+    "v": 0.22
+   },
+   {
+    "at": 12.28,
+    "file": "sfx/pop.wav",
+    "v": 0.26
+   },
+   {
+    "at": 18.46,
+    "file": "sfx/pop.wav",
+    "v": 0.26
+   },
+   {
+    "at": 19.46,
+    "file": "sfx/pop.wav",
+    "v": 0.26
+   },
+   {
+    "at": 21.47,
+    "file": "sfx/swish.wav",
+    "v": 0.22
+   },
+   {
+    "at": 22.2,
+    "file": "sfx/ding.wav",
+    "v": 0.22
+   },
+   {
+    "at": 29.78,
+    "file": "sfx/ding.wav",
+    "v": 0.22
+   }
+  ]
+ },
+ "faceZones": [
+  [
+   0,
+   4.0,
+   0.08,
+   0.47
+  ],
+  [
+   4.0,
+   35,
+   0.13,
+   0.39
+  ]
+ ],
+ "videoFx": [
+  {
+   "fromSec": 0,
+   "toSec": 2.3,
+   "zoomFrom": 1.0,
+   "zoomTo": 1.08,
+   "punchAt": [
+    1.14
+   ],
+   "originY": 0.3
+  },
+  {
+   "fromSec": 2.3,
+   "toSec": 4.0,
+   "zoomFrom": 1.0,
+   "zoomTo": 1.06,
+   "punchAt": [
+    3.28
+   ],
+   "originY": 0.3
+  }
+ ],
+ "safeCheck": {
+  "left": 0.06,
+  "right": 0.16
+ }
+}

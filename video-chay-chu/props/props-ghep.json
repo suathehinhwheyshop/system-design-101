@@ -1,0 +1,212 @@
+{
+ "shots": [
+  {
+   "src": "nguon-04.mp4",
+   "fromSec": 6.5,
+   "toSec": 12.3
+  },
+  {
+   "src": "nguon-02.mp4",
+   "fromSec": 0,
+   "toSec": 4.2
+  },
+  {
+   "src": "nguon-03.mp4",
+   "fromSec": 0,
+   "toSec": 10.33
+  },
+  {
+   "src": "nguon-04.mp4",
+   "fromSec": 0.5,
+   "toSec": 4.7
+  },
+  {
+   "src": "nguon-01-cham075.mp4",
+   "fromSec": 0,
+   "toSec": 5.8
+  },
+  {
+   "src": "nguon-02.mp4",
+   "fromSec": 4.2,
+   "toSec": 13.0
+  },
+  {
+   "src": "nguon-04.mp4",
+   "fromSec": 15.0,
+   "toSec": 25.4,
+   "blur": true
+  },
+  {
+   "src": "nguon-04.mp4",
+   "fromSec": 28.0,
+   "toSec": 33.0
+  },
+  {
+   "src": "nguon-05-cham050.mp4",
+   "fromSec": 0,
+   "toSec": 5.9
+  }
+ ],
+ "segments": [
+  {
+   "text": [
+    "Một cơ thể *KHỎE MẠNH*",
+    "được xây dựng từ",
+    "những *BUỔI TẬP HIỆU QUẢ*"
+   ],
+   "fromSec": 0.15,
+   "durationSec": 5.4,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "và cách bạn",
+    "*VẬN ĐỘNG MỖI NGÀY*"
+   ],
+   "fromSec": 5.95,
+   "durationSec": 3.8,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "*ĐI BỘ, ĐẠP XE*",
+    "hay đơn giản là",
+    "*GIẢM THỜI GIAN NGỒI* một chỗ"
+   ],
+   "fromSec": 10.15,
+   "durationSec": 5.45,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "đều góp phần",
+    "*CẢI THIỆN SỨC KHỎE*,",
+    "*TĂNG SỨC BỀN*"
+   ],
+   "fromSec": 16.0,
+   "durationSec": 4.1,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "và hình thành",
+    "những *THÓI QUEN TÍCH CỰC*"
+   ],
+   "fromSec": 20.5,
+   "durationSec": 3.7,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "Chính vì vậy, tụi mình",
+    "luôn khuyến khích học viên",
+    "*VẬN ĐỘNG CẢ NGOÀI GIỜ TẬP*"
+   ],
+   "fromSec": 24.7,
+   "durationSec": 5.35,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "Ngay cả những ngày",
+    "*KHÔNG CÓ LỊCH* cùng coach,"
+   ],
+   "fromSec": 30.55,
+   "durationSec": 4.05,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "bạn vẫn có thể ghé HF",
+    "*ĐI BỘ* hoặc *ĐẠP XE*"
+   ],
+   "fromSec": 35.0,
+   "durationSec": 3.95,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "mà *KHÔNG MẤT THÊM PHÍ*"
+   ],
+   "fromSec": 39.35,
+   "durationSec": 10.1,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "Bởi điều HF hướng đến",
+    "không chỉ là giúp bạn",
+    "*TẬP TỐT HƠN*"
+   ],
+   "fromSec": 49.75,
+   "durationSec": 4.6,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  },
+  {
+   "text": [
+    "mà còn là cùng bạn xây dựng",
+    "một *LỐI SỐNG LÀNH MẠNH*,",
+    "*NĂNG ĐỘNG* và *BỀN VỮNG* ♡"
+   ],
+   "fromSec": 54.75,
+   "durationSec": 5.25,
+   "style": {
+    "accent": "#E6D3B3",
+    "centerY": 0.31,
+    "keySerif": false
+   }
+  }
+ ],
+ "stepCards": {
+  "images": [
+   "img/s1.png",
+   "img/s2.png",
+   "img/s3.png",
+   "img/s4.png"
+  ],
+  "fromSec": 39.35,
+  "durationSec": 10.1
+ },
+ "music": "nhac.wav",
+ "fadeOutSec": 0.6
+}

@@ -1,0 +1,14 @@
+node_modules/
+.venv-video/
+models/
+out/
+frames/
+samples/
+*.env
+.env*
+*.key
+*.pem
+secrets*
+
+# Giữ timeline bàn giao
+!out/*-timeline.md

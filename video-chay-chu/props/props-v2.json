@@ -1,0 +1,380 @@
+{
+ "durationSec": 33.0,
+ "shots": [
+  {
+   "src": "nguon-04.mp4",
+   "fromSec": 6.5,
+   "start": 0,
+   "end": 4.95
+  },
+  {
+   "src": "nguon-05-cham050.mp4",
+   "fromSec": 0,
+   "start": 4.95,
+   "end": 8.55,
+   "transitionIn": {
+    "type": "frame",
+    "durSec": 0.6
+   }
+  },
+  {
+   "src": "nguon-02.mp4",
+   "fromSec": 0,
+   "start": 8.55,
+   "end": 13.9,
+   "transitionIn": {
+    "type": "dissolve",
+    "durSec": 0.4
+   }
+  },
+  {
+   "src": "nguon-01-cham075.mp4",
+   "fromSec": 0,
+   "start": 13.9,
+   "end": 19.2,
+   "transitionIn": {
+    "type": "dissolve",
+    "durSec": 0.4
+   }
+  },
+  {
+   "src": "nguon-02.mp4",
+   "fromSec": 6.5,
+   "start": 19.2,
+   "end": 23.9,
+   "transitionIn": {
+    "type": "frame",
+    "durSec": 0.6
+   }
+  },
+  {
+   "src": "nguon-04.mp4",
+   "fromSec": 28.0,
+   "start": 23.9,
+   "end": 27.5,
+   "transitionIn": {
+    "type": "dissolve",
+    "durSec": 0.4
+   }
+  },
+  {
+   "src": "nguon-03.mp4",
+   "fromSec": 0,
+   "start": 27.5,
+   "end": 33.0,
+   "transitionIn": {
+    "type": "dissolve",
+    "durSec": 0.4
+   }
+  }
+ ],
+ "segments": [
+  {
+   "text": [
+    "Một cơ thể khỏe mạnh"
+   ],
+   "fromSec": 0.069,
+   "durationSec": 1.781,
+   "parts": [
+    [
+     {
+      "t": "Một cơ thể ",
+      "at": 0.05
+     },
+     {
+      "t": "khỏe mạnh",
+      "at": 0.571,
+      "k": true,
+      "sparkle": true
+     }
+    ]
+   ],
+   "wordsStyle": {
+    "accent": "#E6D3B3",
+    "centerY": 0.3
+   }
+  },
+  {
+   "text": [
+    "Buổi tập hiệu quả",
+    "Và cách bạn vận động"
+   ],
+   "fromSec": 1.91,
+   "durationSec": 2.84,
+   "parts": [
+    [
+     {
+      "t": "Buổi tập hiệu quả",
+      "at": 0.05
+     }
+    ],
+    [
+     {
+      "t": "Và cách bạn ",
+      "at": 0.883
+     },
+     {
+      "t": "vận động",
+      "at": 1.52,
+      "k": true
+     }
+    ]
+   ],
+   "wordsStyle": {
+    "accent": "#E6D3B3",
+    "centerY": 0.3
+   }
+  },
+  {
+   "text": [
+    "đi bộ",
+    "đạp xe",
+    "giảm thời gian ngồi"
+   ],
+   "fromSec": 5.031,
+   "durationSec": 3.419,
+   "parts": [
+    [
+     {
+      "t": "đi bộ",
+      "at": 0.05,
+      "k": true
+     }
+    ],
+    [
+     {
+      "t": "đạp xe",
+      "at": 0.71,
+      "k": true
+     }
+    ],
+    [
+     {
+      "t": "giảm thời gian ngồi",
+      "at": 2.157,
+      "k": true
+     }
+    ]
+   ],
+   "wordsStyle": {
+    "accent": "#E6D3B3",
+    "centerY": 0.36,
+    "lineGap": 0.035
+   }
+  },
+  {
+   "text": [
+    "Cải thiện sức khỏe",
+    "Tăng sức bền"
+   ],
+   "fromSec": 9.151,
+   "durationSec": 1.899,
+   "parts": [
+    [
+     {
+      "t": "Cải thiện ",
+      "at": 0.05
+     },
+     {
+      "t": "sức khỏe",
+      "at": 0.386,
+      "k": true
+     }
+    ],
+    [
+     {
+      "t": "Tăng ",
+      "at": 1.115
+     },
+     {
+      "t": "sức bền",
+      "at": 1.3,
+      "k": true
+     }
+    ]
+   ],
+   "wordsStyle": {
+    "accent": "#E6D3B3",
+    "centerY": 0.32
+   }
+  },
+  {
+   "text": [
+    "Hình thành",
+    "thói quen tích cực"
+   ],
+   "fromSec": 11.246,
+   "durationSec": 2.104,
+   "parts": [
+    [
+     {
+      "t": "Hình thành",
+      "at": 0.05
+     }
+    ],
+    [
+     {
+      "t": "thói quen tích cực",
+      "at": 0.594,
+      "k": true,
+      "sparkle": true
+     }
+    ]
+   ],
+   "wordsStyle": {
+    "accent": "#E6D3B3",
+    "centerY": 0.32
+   }
+  },
+  {
+   "text": [
+    "Khuyến khích học viên",
+    "vận động ngoài giờ tập"
+   ],
+   "fromSec": 14.8,
+   "durationSec": 4.25,
+   "parts": [
+    [
+     {
+      "t": "Khuyến khích học viên",
+      "at": 0.05
+     }
+    ],
+    [
+     {
+      "t": "vận động ",
+      "at": 0.825
+     },
+     {
+      "t": "ngoài giờ tập",
+      "at": 1.404,
+      "k": true
+     }
+    ]
+   ],
+   "wordsStyle": {
+    "accent": "#E6D3B3",
+    "centerY": 0.24
+   }
+  },
+  {
+   "text": [
+    "Ghé House de Forme để đi bộ",
+    "không mất phí"
+   ],
+   "fromSec": 20.158,
+   "durationSec": 3.592,
+   "parts": [
+    [
+     {
+      "t": "Ghé House de Forme để đi bộ",
+      "at": 0.05
+     }
+    ],
+    [
+     {
+      "t": "không mất phí",
+      "at": 2.249,
+      "k": true,
+      "sparkle": true
+     }
+    ]
+   ],
+   "wordsStyle": {
+    "accent": "#E6D3B3",
+    "centerY": 0.3
+   }
+  },
+  {
+   "text": [
+    "Không chỉ giúp bạn tập tốt hơn"
+   ],
+   "fromSec": 25.783,
+   "durationSec": 2.367,
+   "parts": [
+    [
+     {
+      "t": "Không chỉ ",
+      "at": 0.05
+     },
+     {
+      "t": "giúp bạn ",
+      "at": 0.513
+     },
+     {
+      "t": "tập tốt hơn",
+      "at": 0.872,
+      "k": true
+     }
+    ]
+   ],
+   "wordsStyle": {
+    "accent": "#E6D3B3",
+    "centerY": 0.3
+   }
+  },
+  {
+   "text": [
+    "Xây dựng lối sống lành mạnh",
+    "năng động và bền vững"
+   ],
+   "fromSec": 28.318,
+   "durationSec": 4.282,
+   "parts": [
+    [
+     {
+      "t": "Xây dựng ",
+      "at": 0.05
+     },
+     {
+      "t": "lối sống lành mạnh",
+      "at": 0.571,
+      "k": true
+     }
+    ],
+    [
+     {
+      "t": "năng động",
+      "at": 1.636,
+      "k": true
+     },
+     {
+      "t": " và ",
+      "at": 2.087
+     },
+     {
+      "t": "bền vững",
+      "at": 2.33,
+      "k": true,
+      "sparkle": true
+     }
+    ]
+   ],
+   "wordsStyle": {
+    "accent": "#E6D3B3",
+    "centerY": 0.3
+   }
+  }
+ ],
+ "stepCards": {
+  "images": [
+   "img/s4.png",
+   "img/s3.png",
+   "img/s1.png",
+   "img/s2.png"
+  ],
+  "fromSec": 15.7,
+  "durationSec": 3.45,
+  "gapSec": 0.45,
+  "layout": "cascade"
+ },
+ "music": "nhac.wav",
+ "voice": "giong-v2.wav",
+ "musicVolume": 0.22,
+ "voiceSpan": [
+  0.119,
+  31.146
+ ],
+ "logo": "img/logo-trang.png",
+ "fadeOutSec": 0.6
+}
