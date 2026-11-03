@@ -26,6 +26,7 @@ EDIT = [
     ('I2 đẩy tạ',            711, 802, 1.0,  'top', ['Vì mình biết', 'cứ *kiên trì,*'], (0.39, 0.50)),
     ('A squat quần hồng',      0,  51, 1.0,  'low', ['thì những thay đổi', '*tích cực* sẽ ghé thăm'], (0.04, 0.36)),
 ]
+TYPE_N = 3       # chỉ 3 câu mở đầu đánh máy (+ tiếng máy chữ); các câu sau hiện mềm từng hàng
 CPS = 14.0       # tốc độ gõ gốc (ký tự/giây), tự tăng nếu thẻ ngắn
 MAX_TYPE = 0.55  # gõ xong trước 55% thời lượng thẻ để còn thời gian đọc
 random.seed(11)
@@ -92,13 +93,15 @@ for k, (name, a, b, sp, pos, rows, face) in enumerate(EDIT):
     i = 0
     for r in plain_rows:
         for ch in r:
-            keys.append((times[i], ch))
+            if k < TYPE_N:
+                keys.append((times[i], ch))
             i += 1
     scenes.append({'kind': 'lockup', 'fromSec': round(a_t, 3), 'toSec': round(b_t, 3), 'pos': pos, 'shot': name,
-                   'rows': [{'small': nfc(r)} for r in rows], 'times': times})
+                   'rows': [{'small': nfc(r)} for r in rows], 'times': times, 'type': k < TYPE_N,
+                   'rowAt': [round(a_t + 0.05 + 0.3 * ri, 3) for ri in range(len(rows))]})
 
 
-# ---- 3. tiếng gõ phím: bàn phím cơ "thock" trầm, êm (tự tổng hợp, không bản quyền) ----
+# ---- 3. tiếng máy đánh chữ cổ (tự tổng hợp, không bản quyền) ----
 def bandnoise(n, lo, hi):
     x = np.fft.rfft(rng.standard_normal(n))
     fq = np.fft.rfftfreq(n, 1 / SR)
@@ -106,35 +109,51 @@ def bandnoise(n, lo, hi):
     return np.fft.irfft(x, n)
 
 
-def key(space=False):
-    n = int(SR * 0.09)
+def clack(space=False):
+    n = int(SR * 0.12)
     t = np.arange(n) / SR
-    # chạm đáy phím: nhiễu dải trầm-trung, tắt nhanh → tiếng "thock" tròn
-    lo, hi = (250, 1400) if space else (500, 2600)
-    hit = bandnoise(n, lo, hi) * np.exp(-t / (0.011 if space else 0.0065))
-    # cộng hưởng vỏ phím
-    f1 = rng.uniform(180, 260) * (0.8 if space else 1)
-    f2 = rng.uniform(900, 1300)
-    res = (np.sin(2 * np.pi * f1 * t) * np.exp(-t / 0.014) * 0.55 + np.sin(2 * np.pi * f2 * t + 1) * np.exp(-t / 0.004) * 0.25)
-    # tiếng tách đầu rất ngắn, nhỏ (không chói)
-    tick = bandnoise(n, 2500, 6000) * np.exp(-t / 0.0009) * 0.35
-    s = hit / (np.abs(hit).max() + 1e-9) + res + tick
-    # nhả phím: tiếng nhỏ sau ~45–60 ms
-    off = int(SR * rng.uniform(0.045, 0.06))
-    m = n - off
-    s[off:] += bandnoise(m, 700, 3000) * np.exp(-np.arange(m) / SR / 0.004) * 0.22
-    s = s * np.minimum(1, t / 0.0004)
-    return s / np.abs(s).max() * rng.uniform(0.72, 1.0) * (0.9 if space else 1)
+    s = np.zeros(n)
+    if not space:
+        # cần chữ đập vào trục cuốn giấy: "cạch" sắc, sáng
+        strike = bandnoise(n, 1200, 7500) * np.exp(-t / 0.0028)
+        s += strike / (np.abs(strike).max() + 1e-9)
+        # tiếng kim loại ngân ngắn (tần số không điều hoà)
+        f0 = rng.uniform(2000, 2600)
+        for r, amp, dec in [(1.0, 0.30, 0.018), (1.63, 0.18, 0.012), (2.41, 0.10, 0.008)]:
+            s += np.sin(2 * np.pi * f0 * r * t + rng.uniform(0, 6)) * np.exp(-t / dec) * amp
+    # thân máy rung: "cộp" trầm
+    body = np.sin(2 * np.pi * rng.uniform(110, 160) * t) * np.exp(-t / (0.03 if space else 0.022))
+    s += body * (0.9 if space else 0.55) + bandnoise(n, 200, 1200) * np.exp(-t / 0.006) * (0.6 if space else 0.25)
+    # cơ cấu trả phím + bánh răng nhích trục: 2 tiếng tách nhỏ phía sau
+    for d, amp in [(rng.uniform(0.028, 0.036), 0.28), (rng.uniform(0.05, 0.062), 0.18)]:
+        o = int(SR * d)
+        m = n - o
+        s[o:] += bandnoise(m, 1500, 6000) * np.exp(-np.arange(m) / SR / 0.0012) * amp
+    s *= np.minimum(1, t / 0.0002)
+    return s / np.abs(s).max() * rng.uniform(0.75, 1.0) * (0.7 if space else 1)
 
 
-out = np.zeros(int(SR * (DUR + 0.5)))
-for t, ch in keys:
-    s = key(ch == ' ')
+def bell():
+    # chuông hết dòng của máy đánh chữ
+    n = int(SR * 1.2)
+    t = np.arange(n) / SR
+    f = 3150
+    s = sum(np.sin(2 * np.pi * f * r * t) * np.exp(-t / d) * a for r, a, d in [(1, 1, 0.45), (2.76, 0.35, 0.18), (5.40, 0.15, 0.08)])
+    s += bandnoise(n, 2000, 8000) * np.exp(-t / 0.002) * 0.4
+    return s / np.abs(s).max() * 0.55
+
+
+out = np.zeros(int(SR * (DUR + 1.5)))
+def put(t, s):
     i = int(t * SR)
     out[i:i + len(s)] += s[:len(out) - i]
+for t, ch in keys:
+    put(t, clack(ch == ' '))
+put(scenes[TYPE_N - 1]['times'][-1] + 0.18, bell())  # chuông khi gõ xong cụm mở đầu
 ir = np.exp(-np.arange(int(SR * 0.05)) / SR / 0.012) * rng.standard_normal(int(SR * 0.05)) * 0.06
 ir[0] = 1
 out = np.convolve(out, ir)[:len(out)]  # chút phòng nhỏ cho tự nhiên
+out = out[:int(SR * (DUR + 0.5))]
 out = out / np.abs(out).max() * 0.5
 pcm = (np.clip(out, -1, 1) * 32767).astype('<i2')
 os.makedirs('public/sfx', exist_ok=True)
@@ -142,7 +161,7 @@ with wave.open('public/sfx/hf01-typing.wav', 'wb') as w:
     w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes())
 
 props = {'src': 'hf01-edit.mp4', 'audio': 'hf01-audio.wav', 'videoSec': round(VIDEO_SEC, 3), 'durationSec': DUR,
-         'lastFrame': 'hf01-last.png', 'typing': 'sfx/hf01-typing.wav', 'typingVolume': 0.6,
+         'lastFrame': 'hf01-last.png', 'typing': 'sfx/hf01-typing.wav', 'typingVolume': 0.5,
          'color': '#F4EFE6', 'fontSize': 70, 'topY': 0.12, 'lowY': 0.6,
          'safe': {'left': 0.16, 'right': 0.16}, 'safeCheck': {'left': 0.06, 'right': 0.16},
          'faceZones': faces, 'scenes': scenes}
