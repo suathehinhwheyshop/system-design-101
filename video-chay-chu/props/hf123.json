@@ -1,0 +1,204 @@
+{
+ "src": "hf123.mp4",
+ "durationSec": 29.5,
+ "color": "#F4EFE6",
+ "fontSize": 34,
+ "weight": 500,
+ "y": 0.135,
+ "rise": 14,
+ "inSec": 0.3,
+ "outSec": 0.2,
+ "typeSec": 0.7,
+ "safe": {
+  "left": 0.083,
+  "right": 0.083
+ },
+ "safeCheck": {
+  "left": 0.083,
+  "right": 0.083
+ },
+ "faceZones": [
+  [
+   0,
+   1.57,
+   0.27,
+   0.38
+  ],
+  [
+   1.57,
+   3.23,
+   0.29,
+   0.39
+  ],
+  [
+   3.23,
+   6.0,
+   0.22,
+   0.34
+  ],
+  [
+   6.0,
+   10.2,
+   0.37,
+   0.46
+  ],
+  [
+   10.2,
+   13.2,
+   0.52,
+   0.62
+  ],
+  [
+   13.2,
+   15.43,
+   0.4,
+   0.49
+  ],
+  [
+   15.43,
+   18.03,
+   0.4,
+   0.49
+  ],
+  [
+   18.03,
+   20.33,
+   0.45,
+   0.53
+  ],
+  [
+   20.33,
+   25.27,
+   0.46,
+   0.9
+  ],
+  [
+   25.27,
+   29.5,
+   0.29,
+   0.95
+  ]
+ ],
+ "scenes": [
+  {
+   "kind": "lockup",
+   "fromSec": 0.15,
+   "toSec": 3.8,
+   "rows": [
+    {
+     "small": "Vẫn là mình."
+    }
+   ],
+   "y": 0.695
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 3.8,
+   "toSec": 6.5,
+   "rows": [
+    {
+     "small": "Ở những thời điểm khác nhau"
+    }
+   ],
+   "y": 0.695
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 6.5,
+   "toSec": 8.5,
+   "rows": [
+    {
+     "small": "Có lúc thấy mình đẹp"
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 8.5,
+   "toSec": 10.2,
+   "rows": [
+    {
+     "small": "Có lúc lại chưa hài lòng"
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 10.5,
+   "toSec": 13.8,
+   "rows": [
+    {
+     "small": "Mình cũng từng sốt ruột"
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 13.8,
+   "toSec": 16.2,
+   "rows": [
+    {
+     "small": "Nhưng thay đổi cần thời gian"
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 16.2,
+   "toSec": 18.8,
+   "rows": [
+    {
+     "small": "Nên mình cứ tiếp tục"
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 18.8,
+   "toSec": 20.8,
+   "rows": [
+    {
+     "small": "Từng buổi một."
+    }
+   ],
+   "anim": "type"
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 20.8,
+   "toSec": 22.8,
+   "rows": [
+    {
+     "small": "Học cách kiên trì"
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 22.8,
+   "toSec": 25.2,
+   "rows": [
+    {
+     "small": "Vì mình biết chỉ cần kiên nhẫn"
+    },
+    {
+     "small": "và tin tưởng vào bản thân"
+    }
+   ]
+  },
+  {
+   "kind": "lockup",
+   "fromSec": 25.4,
+   "toSec": 29.5,
+   "rows": [
+    {
+     "small": "Thì những thay đổi tích cực"
+    },
+    {
+     "small": "rồi sẽ ghé thăm"
+    }
+   ],
+   "hold": true
+  }
+ ]
+}

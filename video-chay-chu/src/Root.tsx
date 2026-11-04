@@ -18,6 +18,8 @@ import {StoryEdit, calcStory, StoryProps} from './compositions/StoryEdit';
 import kb13Props from '../props/kb13.json';
 import {HfType, calcHfType, HfTypeProps} from './compositions/HfType';
 import hf01Props from '../props/hf01.json';
+import {HfSoft, calcHfSoft, HfSoftProps} from './compositions/HfSoft';
+import hf123Props from '../props/hf123.json';
 import {TalkKinetic, calcKinetic, KineticProps} from './compositions/TalkKinetic';
 
 const FontTest: React.FC = () => (
@@ -48,5 +50,7 @@ export const Root: React.FC = () => (
       defaultProps={kb13Props as unknown as StoryProps} calculateMetadata={calcStory} />
     <Composition id="HfType" component={HfType} durationInFrames={931} fps={30} width={1080} height={1920}
       defaultProps={hf01Props as unknown as HfTypeProps} calculateMetadata={calcHfType} />
+    <Composition id="HfSoft" component={HfSoft} durationInFrames={885} fps={30} width={720} height={1280}
+      defaultProps={hf123Props as unknown as HfSoftProps} calculateMetadata={calcHfSoft} />
   </>
 );
