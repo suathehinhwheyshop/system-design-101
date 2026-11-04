@@ -1,7 +1,7 @@
 {
  "src": "hf123.mp4",
  "durationSec": 29.5,
- "color": "#F4EFE6",
+ "color": "#FFFFFF",
  "fontSize": 34,
  "weight": 500,
  "y": 0.135,
@@ -88,8 +88,7 @@
     {
      "small": "Vẫn là mình."
     }
-   ],
-   "y": 0.695
+   ]
   },
   {
    "kind": "lockup",
@@ -99,8 +98,7 @@
     {
      "small": "Ở những thời điểm khác nhau"
     }
-   ],
-   "y": 0.695
+   ]
   },
   {
    "kind": "lockup",
