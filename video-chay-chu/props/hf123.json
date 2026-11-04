@@ -102,7 +102,7 @@
     }
    ],
    "anim": "left",
-   "y": 0.155
+   "y": 0.17
   },
   {
    "kind": "lockup",
@@ -114,7 +114,7 @@
     }
    ],
    "anim": "fade",
-   "y": 0.155
+   "y": 0.17
   },
   {
    "kind": "lockup",
@@ -126,12 +126,12 @@
     }
    ],
    "anim": "fade",
-   "y": 0.192
+   "y": 0.207
   },
   {
    "kind": "lockup",
-   "fromSec": 13.0,
-   "toSec": 14.95,
+   "fromSec": 13.2,
+   "toSec": 15.43,
    "rows": [
     {
      "small": "Mình cũng từng sốt ruột,"
@@ -141,26 +141,26 @@
     }
    ],
    "anim": "fade",
-   "y": 0.155,
+   "y": 0.17,
    "inSec": 0.6
   },
   {
    "kind": "lockup",
-   "fromSec": 15.0,
-   "toSec": 17.95,
+   "fromSec": 15.43,
+   "toSec": 18.03,
    "rows": [
     {
      "small": "Nhưng cơ thể cần thời gian"
     }
    ],
    "anim": "fade",
-   "y": 0.155,
+   "y": 0.17,
    "inSec": 0.6
   },
   {
    "kind": "lockup",
-   "fromSec": 18.0,
-   "toSec": 20.95,
+   "fromSec": 18.03,
+   "toSec": 20.33,
    "rows": [
     {
      "small": "Nên mình cứ tiếp tục"
@@ -170,13 +170,13 @@
     }
    ],
    "anim": "fade",
-   "y": 0.155,
+   "y": 0.17,
    "inSec": 0.6
   },
   {
    "kind": "lockup",
    "fromSec": 22.0,
-   "toSec": 25.95,
+   "toSec": 25.27,
    "rows": [
     {
      "small": "Vì mình biết nếu mình cứ"
@@ -186,11 +186,11 @@
     }
    ],
    "anim": "static",
-   "y": 0.13
+   "y": 0.145
   },
   {
    "kind": "lockup",
-   "fromSec": 26.0,
+   "fromSec": 25.3,
    "toSec": 29.5,
    "rows": [
     {
@@ -201,7 +201,7 @@
     }
    ],
    "anim": "static",
-   "y": 0.13,
+   "y": 0.145,
    "hold": true
   }
  ]
