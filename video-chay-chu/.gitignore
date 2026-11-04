@@ -1,7 +1,7 @@
 node_modules/
 .venv-video/
 models/
-out/
+out/*
 frames/
 samples/
 *.env
