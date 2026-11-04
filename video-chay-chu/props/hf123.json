@@ -102,7 +102,7 @@
     }
    ],
    "anim": "left",
-   "y": 0.135
+   "y": 0.155
   },
   {
    "kind": "lockup",
@@ -114,7 +114,7 @@
     }
    ],
    "anim": "fade",
-   "y": 0.135
+   "y": 0.155
   },
   {
    "kind": "lockup",
@@ -125,8 +125,8 @@
      "small": "Có khi lại chưa hài lòng"
     }
    ],
-   "anim": "left",
-   "y": 0.182
+   "anim": "fade",
+   "y": 0.192
   },
   {
    "kind": "lockup",
@@ -141,7 +141,7 @@
     }
    ],
    "anim": "fade",
-   "y": 0.135,
+   "y": 0.155,
    "inSec": 0.6
   },
   {
@@ -154,7 +154,7 @@
     }
    ],
    "anim": "fade",
-   "y": 0.135,
+   "y": 0.155,
    "inSec": 0.6
   },
   {
@@ -170,13 +170,13 @@
     }
    ],
    "anim": "fade",
-   "y": 0.135,
+   "y": 0.155,
    "inSec": 0.6
   },
   {
    "kind": "lockup",
    "fromSec": 22.0,
-   "toSec": 29.5,
+   "toSec": 25.95,
    "rows": [
     {
      "small": "Vì mình biết nếu mình cứ"
@@ -186,8 +186,7 @@
     }
    ],
    "anim": "static",
-   "y": 0.106,
-   "hold": true
+   "y": 0.13
   },
   {
    "kind": "lockup",
@@ -201,8 +200,8 @@
      "small": "sẽ ghé thăm"
     }
    ],
-   "anim": "left",
-   "y": 0.181,
+   "anim": "static",
+   "y": 0.13,
    "hold": true
   }
  ]
